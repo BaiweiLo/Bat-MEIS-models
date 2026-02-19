@@ -2,7 +2,7 @@
 
 A deep learning framework for predicting **genomic regulatory signals** directly from DNA sequence.
 
-This scripts performs **binary classification** tasks for models I trained and reported in my publications:
+The following scripts performs **binary classification** tasks for models I trained and reported in my publications:
 
 - **bat limb MEIS2 binding affinity (401bp)**
 - **bat forelimb-specific MEIS2 accessibility (501bp)**
