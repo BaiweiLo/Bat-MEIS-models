@@ -1,16 +1,16 @@
-# Genomic Sequence Predictor
+# Limb Functional Predictors
 
 A deep learning framework for predicting **genomic regulatory signals** directly from DNA sequence.
 
-The following scripts performs **binary classification** tasks for models I trained and reported in my publications:
+These are the **binary classification** models I trained in my publications:
 
 - **bat limb MEIS2 binding affinity (401bp)**
 - **bat forelimb-specific MEIS2 accessibility (501bp)**
 - **mouse limb TWIST1 binding affinity (401bp)**
-- **forelimb accessibility (E11.5) (500bp)**
-- **forelimb accessibility (E13.5) (500bp)**
+- **Laurasiatherian forelimb accessibility early (500bp)**
+- **Laurasiatherian forelimb accessibility late (500bp)**
 
-The two binding models were trained on accessible regions and should work on regulatory sequences (eg. conserved elements). The MEIS accessibility model was only trained on MEIS binding regions. The forelimb accessibility models were trained on ATAC-seq peaks and their orthologs. Predictions outside these data range will yield unreliable results.
+The two binding models were trained on accessible regions and should work on regulatory sequences (eg. ATAC-seq, TF ChIP-seq peaks, conserved elements). The MEIS accessibility model was only trained on regions with MEIS binding affinity. The forelimb accessibility models were trained on ATAC-seq peaks and their orthologs. Predictions outside the original data range will yield unreliable or unintepretable results.
 
 ---
 
@@ -31,8 +31,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Clone the repository and synchronize dependencies:
 
 ```bash
-git clone https://github.com/your-username/genomic-predictor.git
-cd genomic-predictor
+git clone https://github.com/BaiweiLo/Bat-MEIS-models.git
+cd Bat-MEIS-models
 uv sync
 ```
 
@@ -45,7 +45,7 @@ uv sync
 - Fixed sequence length (see above description of the models)
 
 ### Output
-Predicted probabilities for the classification task.
+A tab separated table. The first column is the name of the sequences, followed by predicted probabilities for classification tasks and scores for regression tasks. 
 
 
 ## Running Predictions
