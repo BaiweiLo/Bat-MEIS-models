@@ -1,0 +1,17 @@
+[project]
+name = "genomic-sequence-predictor"
+version = "0.1.0"
+description = "Multi-label genomic sequence prediction tool"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "tensorflow>=2.15.0",
+    "biopython>=1.81",
+    "pandas>=2.0.0",
+    "numpy>=1.23.5",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0.0", # For testing
+]
