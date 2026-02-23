@@ -4,9 +4,9 @@ A deep learning framework for predicting **genomic regulatory signals** directly
 
 These are the **binary classification** models I trained in my publications:
 
-- **bat limb MEIS2 binding affinity (401bp)**
-- **bat forelimb-specific MEIS2 accessibility (501bp)**
-- **mouse limb TWIST1 binding affinity (401bp)**
+- **bat CS18 limb MEIS2 binding affinity (401bp)**
+- **bat CS18 forelimb-specific MEIS2 accessibility (501bp)**
+- **mouse E10.5 limb TWIST1 binding affinity (401bp)**
 - **Boreoeutherian forelimb accessibility early (500bp)**
 - **Boreoeutherian forelimb accessibility late (500bp)**
 
@@ -41,6 +41,7 @@ uv sync
 ## Model Specification
 
 ### Input
+- h5 model
 - Fasta sequences 
 - Fixed sequence length (see above description of the models)
 
