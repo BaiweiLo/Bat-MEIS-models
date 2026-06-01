@@ -6,7 +6,7 @@ library(ape)
 library(dplyr)
 library(tidyr)
 
-# ---- Load predictions of Laurasiatherians ----
+# ---- Load predictions of Laurasiatherians (an example file is given in the directory)----
 expr <- read.table(
   "example_meis_binding_prediction.tsv",
   header = TRUE, sep = "\t", check.names = FALSE
@@ -15,9 +15,9 @@ expr <- read.table(
 tree <- read.tree("241-mammalian-2020v2.phast-242.nh")
 
 # ---- Define species columns ----
-# ---- Bats ----
+# Bats 
 order1_cols <- 9:38
-# ---- Non-bat Scrotiferans -----
+#  Non-bat Scrotiferans 
 order2_cols <- 39:ncol(expr)
 order1_species <- colnames(expr)[order1_cols]
 order2_species <- colnames(expr)[order2_cols]
@@ -68,6 +68,7 @@ for (i in seq_along(genes)) {
     df <- df[match(sub_tree$tip.label, df$species), ]
     rownames(df) <- df$species
 
+    # Paget's lambda model, prediction ~ lineage (if the epigenomic profiles explains wing evolution)
     fit <- phylolm(expression ~ order, data = df, phy = sub_tree, model = "lambda")
     coef_table <- summary(fit)$coefficients
 
