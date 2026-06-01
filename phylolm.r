@@ -68,7 +68,7 @@ for (i in seq_along(genes)) {
     df <- df[match(sub_tree$tip.label, df$species), ]
     rownames(df) <- df$species
 
-    # Paget's lambda model, prediction ~ lineage (if the epigenomic profiles explains wing evolution)
+    # Paget's lambda model, prediction ~ lineage (if the epigenomic profiles at a given locus explain wing evolution)
     fit <- phylolm(expression ~ order, data = df, phy = sub_tree, model = "lambda")
     coef_table <- summary(fit)$coefficients
 
