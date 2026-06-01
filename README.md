@@ -1,14 +1,13 @@
-# Limb Functional Predictors
+# Wing Membrane Functional Predictors
 
 A deep learning framework for predicting **genomic regulatory signals** directly from DNA sequence.
 
-These are the **binary classification** models I trained in my publications:
+These are the **binary classification** models I trained for the MEIS2 project:
 
 - **bat CS18 limb MEIS2 binding affinity (401bp)**
 - **bat CS18 forelimb-specific MEIS2 accessibility (501bp)**
 - **mouse E10.5 limb TWIST1 binding affinity (401bp)**
-- **Boreoeutherian forelimb accessibility early (500bp)**
-- **Boreoeutherian forelimb accessibility late (500bp)**
+
 
 The two binding models were trained on accessible regions and should work on regulatory sequences (eg. ATAC-seq, TF ChIP-seq peaks, conserved elements). The MEIS accessibility model was only trained on regions with MEIS binding affinity. The forelimb accessibility models were trained on ATAC-seq peaks and their orthologs. Predictions outside the original data range will yield unreliable or unintepretable results.
 
